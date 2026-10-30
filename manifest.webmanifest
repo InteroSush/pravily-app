@@ -1,0 +1,14 @@
+{
+  "name": "Пераклад ПДР",
+  "short_name": "Пераклад",
+  "lang": "be",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#f3eee5",
+  "theme_color": "#f3eee5",
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="be">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Пераклад ПДР</title>
+<meta name="theme-color" content="#f3eee5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1f1c19" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<aside id="side">
+  <div class="sh"><b>Пераклад ПДР</b><button id="addch">+ Глава</button></div>
+  <nav id="tree" aria-label="Главы"></nav>
+</aside>
+<div id="shade"></div>
+<main>
+  <header class="top">
+    <button id="menu" class="ib" aria-label="Змест">☰</button>
+    <input id="q" type="search" placeholder="Пошук па ўсім тэксце" aria-label="Пошук" autocomplete="off" spellcheck="false">
+    <select id="mode" aria-label="Рэжым">
+      <option value="par">Паралельны</option><option value="be">Толькі бел</option><option value="read">Чытанне</option>
+    </select>
+    <select id="flt" aria-label="Фільтр">
+      <option value="all">Усе</option><option value="none">Няма перакладу</option>
+      <option value="stale">Рускі тэкст змяніўся</option><option value="draft">Чарнавікі</option>
+      <option value="old">З кнігі 2012</option><option value="done">Гатова</option>
+      <option value="refs">Спасылкі не супадаюць</option>
+    </select>
+    <span id="save" aria-live="polite"></span>
+    <button id="more" class="ib" aria-label="Меню" aria-expanded="false">⋯</button>
+  </header>
+  <div id="panel" hidden>
+    <button id="bImpText">Імпарт тэксту…</button>
+    <button id="bImpFile">Імпарт файла працы…</button>
+    <button id="bExp">Экспарт у файл</button>
+    <button id="bDict">Слоўнік (words.json)…</button>
+    <button id="bTheme">Змяніць тэму</button>
+    <p id="dinfo" class="muted"></p>
+  </div>
+  <p id="cnt" class="muted"></p>
+  <section id="pane"></section>
+</main>
+<div id="pop" hidden></div>
+<div id="toast" role="status"></div>
+<input type="file" id="fileIn" accept=".json,application/json" hidden>
+<input type="file" id="dictIn" accept=".json,application/json" hidden>
+<dialog id="dlg">
+  <form method="dialog">
+    <h2>Імпарт тэксту</h2>
+    <label class="rad"><input type="radio" name="kind" value="ru" checked> Рускі тэкст: дадае новыя пункты, абнаўляе змененыя (пераклады змененых будуць пазначаны)</label>
+    <label class="rad"><input type="radio" name="kind" value="be"> Беларускі пераклад: запаўняе па нумарах, стан «з кнігі 2012»</label>
+    <textarea id="impText" rows="12" placeholder="Устаўце тэкст:&#10;Глава 1. Назва&#10;1. Тэкст пункта&#10;1.1. Тэкст падпункта"></textarea>
+    <p id="impInfo" class="muted"></p>
+    <div class="row"><button value="cancel">Скасаваць</button><button id="impGo" class="pri" value="ok">Імпартаваць</button></div>
+  </form>
+</dialog>
+<script src="stem.js"></script>
+<script src="core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
