@@ -1,5 +1,5 @@
 // Пры змене любога файла рэдактара павялічце нумар кэшу.
-const CACHE = "pdd-shell-v1";
+const CACHE = "pdd-shell-v2";
 const SHELL = ["./", "index.html", "style.css", "stem.js", "core.js", "app.js", "manifest.webmanifest",
                "icons/icon-192.png", "icons/icon-512.png"];
 self.addEventListener("install", e => {
